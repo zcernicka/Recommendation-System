@@ -4,7 +4,7 @@ title TEXT,
 RealeaseDate TEXT,
 Distributor TEXT,
 Starring TEXT,
-Summary TEXT,
+Summary TEXT, --hello
 Director TEXT,
 Genre TEXT,
 Rating TEXT,
@@ -15,19 +15,19 @@ coreCounts TEXT
 )
 ;
 \copy movies FROM '/home/pi/RSL/moviesFromMetacritic.csv' DELIMITER';' csv header
-SELECT * FROM movies where url='pirates-of-the-caribbean-the-curse-of-the-black-pearl';
+SELECT * FROM movies where url='the-lion-king';
 ALTER TABLE movies
 ADD lexemesSummary tsvector;
 UPDATE movies
 SET lexemesSummary = to_tsvector(Summary);
 SELECT url FROM movies
-WHERE lexemesSummary @@ to_tsquery('pirate');
+WHERE lexemesSummary @@ to_tsquery('lion');
 ALTER TABLE movies
 ADD rank float4;
 UPDATE movies
 SET rank=ts_rank(lexemessummary,plainto_tsquery(
 (
-SELECT Summary FROM movies WHERE url='pirates-of-the-caribbean-the-curse-of-the-black-pearl'
+SELECT Summary FROM movies WHERE url='the-lion-king'
 )
 ));
 CREATE TABLE recommendationsBasedOnSummaryField AS
