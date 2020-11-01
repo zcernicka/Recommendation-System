@@ -1,22 +1,43 @@
 RESULTS INTERPRETATION
 ----------------------
 
-For the sake of analysis I chose 3 favourite movies: Just Go with It, Bohemian Rapsody & The Lion King. 
-Out of those, only the lion king occured in the table and thus I used that for analysis. 
+For the sake of analysis, I chose 3 favourite movies: Just Go with It, Bohemian Rapsody & The Lion King. 
+Out of those, only the lion king occurred in the table and thus I used that for analysis. 
 
 
 Recommendation System Creation with Natural Language Processing in SQL
 ----------------------------------------------------------------------
-Full text search of summary, title & starring fields provided some usefull movie recommendations - some fields better than the others.
+Full text search of summary, title & starring fields provided some useful movie recommendations - some fields better than the others.
 Results show, recommendations based on the summary field brought the highest ranking for top 50 ranging from 0.99 to 0.77. 
-Most of the suggested movies correspond to the liong king e.g. 'the Simpsons Movie', 'Monsters Inc' or 'Shrek the Third'. However, 
+Most of the suggested movies correspond to the lion king e.g. 'the Simpsons Movie', 'Monsters Inc' or 'Shrek the Third'. However, 
 some movies seem to not fully correspond with the lion king e.g. 'Exorcist, the beginning', 'Anacondas the hunt for the blood orchid' or 
 'Ghost Rider'. This is probably due to the fact the lion king includes words like death in the summary and that's why it is also connected
 with horror movies. Although there are some good recommendations in the list, I would not use this analysis in a real life. Imagine a kid
 who wants to watch another animation sees a horror movie instead! To further tweak this analysis, I would have a look at genres and 
-definetely exclude horror movies. Suggestions that come from a starring field are not so impressive. For the animation, the actors are
-chosen based on other characteristics than for a normal movie. It does not matter if the actres is famous or not. It just needs to fit the
+definitely exclude horror movies. Suggestions that come from a starring field are not so impressive. For the animation, the actors are
+chosen based on other characteristics than for a normal movie. It does not matter if the actress is famous or not. It just needs to fit the
 character of the animation. Therefore, for the lion king I would not recommend to use starring field.It could be that for some other 
-movies or famous actors like James Bond, the recommendations would definetely fit. But not in this case. As for the title field, there is
-only one recommendation and thus the movie itself. Threfore, in my opinion the title should not be used as main attribute of recommendation
-system. 
+movies or famous actors like James Bond, the recommendations would definitely fit. But not in this case. As for the title field, there is
+only one relevant recommendation and thus the movie itself. Therefore, in my opinion the title should not be used as an attribute of 
+recommendation system. 
+
+Recommendation System Creation based on Author's Ranking & Sentiment in Python
+-------------------------------------------------------------------------------
+Recommendations based on other reviews metascores and the system "I liked the lion king, but this one is even better!" definitely offers 
+the movies I once saw or would like to see. I see a mix of animated movies, but also other movies that would be mostly appropriate for 
+children up to 12 years, which is good. But, recommendations also include some horrors, which could be prevented by adding another filter 
+like genres.When considering only my personal taste I conclude that I might use these recommendations further as they suggest very 
+interesting selections.
+Recommendations based on the reviews sentiment give 3 times more movies than the one considering the metascore. I would definitely found 
+some movies that I could watch based on the selection. However, I am worried there are just too many movies to select from and it appeals 
+like closing the document due to movie overload. I would probably do a combination of some other approaches like genres selection, 
+summary selection or metascore reviews + sentiment analysis. 
+
+
+Recommendation System Creation Retrospective
+--------------------------------------------
+I am more than happy that I could develop such analysis. The booklet supported me during the whole process and provided some tips about
+the RS creation. I have some experience with SQL and thus the first part was quite easy for me. However, I am a beginner to python and 
+my impressions are that the RS creation is a huge step to take as a beginner. Moreover, there were less hints for the python part in the 
+booklet so I had to work really hard to come up with some results. Even now I still consider myself as a beginner, but one needs to start 
+somewhere and I know I learned a lot during the first week of this module.
