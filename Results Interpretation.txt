@@ -1,0 +1,22 @@
+RESULTS INTERPRETATION
+----------------------
+
+For the sake of analysis I chose 3 favourite movies: Just Go with It, Bohemian Rapsody & The Lion King. 
+Out of those, only the lion king occured in the table and thus I used that for analysis. 
+
+
+Recommendation System Creation with Natural Language Processing in SQL
+----------------------------------------------------------------------
+Full text search of summary, title & starring fields provided some usefull movie recommendations - some fields better than the others.
+Results show, recommendations based on the summary field brought the highest ranking for top 50 ranging from 0.99 to 0.77. 
+Most of the suggested movies correspond to the liong king e.g. 'the Simpsons Movie', 'Monsters Inc' or 'Shrek the Third'. However, 
+some movies seem to not fully correspond with the lion king e.g. 'Exorcist, the beginning', 'Anacondas the hunt for the blood orchid' or 
+'Ghost Rider'. This is probably due to the fact the lion king includes words like death in the summary and that's why it is also connected
+with horror movies. Although there are some good recommendations in the list, I would not use this analysis in a real life. Imagine a kid
+who wants to watch another animation sees a horror movie instead! To further tweak this analysis, I would have a look at genres and 
+definetely exclude horror movies. Suggestions that come from a starring field are not so impressive. For the animation, the actors are
+chosen based on other characteristics than for a normal movie. It does not matter if the actres is famous or not. It just needs to fit the
+character of the animation. Therefore, for the lion king I would not recommend to use starring field.It could be that for some other 
+movies or famous actors like James Bond, the recommendations would definetely fit. But not in this case. As for the title field, there is
+only one recommendation and thus the movie itself. Threfore, in my opinion the title should not be used as main attribute of recommendation
+system. 

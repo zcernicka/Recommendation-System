@@ -38,7 +38,7 @@ SET rank_starring=ts_rank(lexemesstarring,plainto_tsquery(
 SELECT starring FROM movies WHERE url='the-lion-king'
 )
 ));
--- rank threshold set to be above 0, to cover all existing movie matches in the desceinding order (best matching movies are displayed at the top of the list) and are copied to a csv list
+-- rank threshold set to be above 0.01, to cover all existing movie matches in the desceinding order (best matching movies are displayed at the top of the list) and are copied to a csv list
 CREATE TABLE IF NOT EXISTS  RS_Starring AS
-SELECT url, rank_starring FROM movies WHERE rank_starring >0 ORDER BY rank_starring DESC LIMIT 50
+SELECT url, rank_starring FROM movies WHERE rank_starring > 0 ORDER BY rank_starring DESC LIMIT 50
 \copy (SELECT * FROM RS_Starring) to '/home/pi/RSL/Output/RS_Starring_ZC.csv' WITH csv;

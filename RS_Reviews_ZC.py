@@ -25,8 +25,8 @@ for author in range(subset.shape[0]):
         #every found index and its row values shall be added to "row"
         row=data[movie:movie+1]
         #data about absolute metascore increase shall be added within a columns called Abs_increase
-        row.Abs_Increase = data.Metascore_w.iloc[movie] - subset.Metascore_w.iloc[author]
-                #rows defined shall be added to the result dataset
+        row.insert(4,'Abs_Increase', data.Metascore_w.iloc[movie] - subset.Metascore_w.iloc[author])
+        #rows defined shall be added to the result dataset
         result=result.append(row)     
 #Absolute Increases shall be sorted in a descending order
 result.sort_values(['Abs_Increase'], ascending=False)
