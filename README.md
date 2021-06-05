@@ -1,1 +1,2 @@
-# Recommendation SYstem for movies 
+# Basic recommendation system for movies 
+# - University assignment -
